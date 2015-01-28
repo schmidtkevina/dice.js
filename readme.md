@@ -5,25 +5,34 @@ The dice.js library can be used to simulate rolling n number of dice with n numb
 ## Code Example
 
 //create the dice;
+
 var dice = new Dice(6, 6);
 
 //roll the dice;
+
 dice.roll();
     
 //get and store the result of the dice;
+
 var diceResult = dice.getResultOfDice()
 
 //loop over the results
+
 for( i=0; i<diceResult.length; i++ )
+
 {
+    
     //add to the outputOfDice string;
+    
     outputOfDice += diceResult[i] + " ";
+
 }
 
 //show me the money!;
+
 alert( outputOfDice );
  
-There is a full exampl in the index.html file in the repo.
+There is a full example in the index.html file in the repo.
 
 ## Motivation
 
