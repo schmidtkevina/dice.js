@@ -1,0 +1,65 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>dice.js</title>
+
+<script src="js/dice.js"></script>
+    
+    
+<script type="text/javascript">
+    
+function rollDice(numberOfDice, numberOfSides)
+{
+    var numberOfDice  =  ( typeof numberOfDice == "undefined" ) ? 1 : numberOfDice;
+	var numberOfSides =  ( typeof numberOfSides == "undefined" ) ? 6 : numberOfSides;
+    
+    var outputOfDice = "";
+    
+    var dice = new Dice(numberOfDice, numberOfSides);
+    dice.roll();
+    
+    var diceResult = dice.getResultOfDice()
+  
+
+    
+    //loop over the results
+    for( i=0; i<diceResult.length; i++ )
+    {
+        //add to the outputOfDice string;
+        outputOfDice += diceResult[i] + " ";
+    }
+
+    //Show me the money!;
+    alert( outputOfDice );
+    
+    
+}
+    
+    
+</script>	
+</head>
+
+<body>
+Roll the dice with default values:
+<br>
+<input type="button" value="Roll Dice!" onClick="rollDice()">
+<br><br>
+Roll the dice with the number of dice specified:
+<br>
+<form>
+	<input type="text" id="numberOfDice" width="25">
+   	<input type="button" value="Roll Dice!" onClick="rollDice( document.forms[0].numberOfDice.value )">  
+</form>
+
+<br><br>
+Roll the dice with the number of dice and number of sides specified:
+<br>
+<form>
+	<input type="text" id="numberOfDice" width="25">
+    <input type="text" id="numberOfSides" width="25">
+   	<input type="button" value="Roll Dice!" onClick="rollDice( document.forms[1].numberOfDice.value, document.forms[1].numberOfSides.value )">  
+</form>
+
+</body>
+</html>
